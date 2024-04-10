@@ -1,0 +1,14 @@
+C:\xampp\htdocs\ExerciciosConsole\bin\Debug\net8.0\ExerciciosConsole.exe
+C:\xampp\htdocs\ExerciciosConsole\bin\Debug\net8.0\ExerciciosConsole.deps.json
+C:\xampp\htdocs\ExerciciosConsole\bin\Debug\net8.0\ExerciciosConsole.runtimeconfig.json
+C:\xampp\htdocs\ExerciciosConsole\bin\Debug\net8.0\ExerciciosConsole.dll
+C:\xampp\htdocs\ExerciciosConsole\bin\Debug\net8.0\ExerciciosConsole.pdb
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.AssemblyInfoInputs.cache
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.AssemblyInfo.cs
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.dll
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\refint\ExerciciosConsole.dll
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.pdb
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.genruntimeconfig.cache
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ref\ExerciciosConsole.dll
