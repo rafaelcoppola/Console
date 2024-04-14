@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.FileIO;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace ExerciciosConsole;
@@ -8,8 +9,11 @@ class Program
 {
 	static void Main()
 	{
-		//welcomeUser();
+		welcomeUser();
 		calcule();
+		countString();
+		validateCarPlate();
+		date();
 	}
 
 	static void welcomeUser()
@@ -94,15 +98,16 @@ class Program
 
 				value1 = Console.ReadLine();
 
-				Console.WriteLine("---Informe o segundo valor---\r\n");
+				Console.WriteLine("\r\n---Informe o segundo valor---\r\n");
 
 				value2 = Console.ReadLine();
 
-				if (value1.Any() || value2.Any())
+				if (value1.Any() && value2.Any())
 				{
-					string result = sum(value1, value2);
+					string result = Calculation.sum(value1, value2);
 
-					Console.WriteLine($"O resultado é {result}\r\n");
+					Console.WriteLine($"\r\n---O resultado é {result}---");
+					Console.WriteLine("\r\n********************************************\r\n");
 				}
 
 				break;
@@ -112,25 +117,73 @@ class Program
 
 				value1 = Console.ReadLine();
 
-				Console.WriteLine("---Informe o segundo valor---\r\n");
+				Console.WriteLine("\r\n---Informe o segundo valor---\r\n");
 
 				value2 = Console.ReadLine();
 
 				if (value1.Any() || value2.Any())
 				{
-					string result = subtract(value1, value2);
+					string result = Calculation.subtract(value1, value2);
 
-					Console.WriteLine($"O resultado é {result}\r\n");
+					Console.WriteLine($"\r\n---O resultado é {result}---");
+					Console.WriteLine("\r\n********************************************\r\n");
 				}
 				break;
 			case "3":
-				Console.WriteLine("Multiplicação");
+				Console.WriteLine("########### Voce Escolheu Multiplicar ###########\r\n");
+				Console.WriteLine("---Informe o primeiro valor---\r\n");
+
+				value1 = Console.ReadLine();
+
+				Console.WriteLine("\r\n---Informe o segundo valor---\r\n");
+
+				value2 = Console.ReadLine();
+
+				if (value1.Any() || value2.Any())
+				{
+					string result = Calculation.multiply(value1, value2);
+
+					Console.WriteLine($"\r\n---O resultado é {result}---");
+					Console.WriteLine("\r\n********************************************\r\n");
+				}
 				break;
 			case "4":
-				Console.WriteLine("Divisão");
+				Console.WriteLine("########### Voce Escolheu Multiplicar ###########\r\n");
+				Console.WriteLine("---Informe o primeiro valor---\r\n");
+
+				value1 = Console.ReadLine();
+
+				Console.WriteLine("\r\n---Informe o segundo valor---\r\n");
+
+				value2 = Console.ReadLine();
+
+				if (value1.Any() || value2.Any())
+				{
+					string result = Calculation.divide(value1, value2);
+
+					Console.WriteLine($"\r\n---O resultado é {result}---");
+					Console.WriteLine("\r\n********************************************\r\n");
+				}
+
 				break;
 			case "5":
-				Console.WriteLine("Média entre 2 números");
+				Console.WriteLine("########### Voce Escolheu Para fazer a média ###########\r\n");
+				Console.WriteLine("---Informe o primeiro valor---\r\n");
+
+				value1 = Console.ReadLine();
+
+				Console.WriteLine("\r\n---Informe o segundo valor---\r\n");
+
+				value2 = Console.ReadLine();
+
+				if (value1.Any() || value2.Any())
+				{
+					string result = Calculation.average(value1, value2);
+
+					Console.WriteLine($"\r\n---O resultado é {result}---");
+					Console.WriteLine("\r\n********************************************\r\n");
+				}
+
 				break;
 		}
 
@@ -153,44 +206,78 @@ class Program
 		Console.WriteLine("\r\n"); // Limpa a linha da animação
 	}
 
-	static string sum(string value1, string value2)
+	static void countString()
 	{
-		string pattern = @"[\+\-\*\/]";
-		bool value1IsNotValid = Regex.IsMatch(value1, pattern);
-		bool value2IsNotValid = Regex.IsMatch(value2, pattern);
+		Console.WriteLine("########### Exercício Prático 4 - Contador de caracteres ###########\r\n");
+		Console.WriteLine("********************************************");
 
-		if (value1IsNotValid || value2IsNotValid)
-		{
-			Console.WriteLine("Valores informados não são validos. Por favor tente novamente!");
-			Environment.Exit(0);
-		}
+		Console.WriteLine("---Digite qualquer palavra---\r\n");
+		animation();
 
-		double _value1 = Convert.ToDouble(value1);
-		double _value2 = Convert.ToDouble(value2);
+		string words = Console.ReadLine();
 
-		double result = _value1 + _value2;
+		int count = words.Length;
 
-		return result.ToString();
+		Console.WriteLine("\r\n********************************************\r\n");
+
+		Console.WriteLine($"sua palavra contem {count} caracteres\r\n");
+		Console.WriteLine("********************************************\r\n");
+
 	}
 
-	static string subtract(string value1, string value2)
+	static void validateCarPlate()
 	{
+		Console.WriteLine("########### Exercício Prático 5 - Validacao de placas automotivas ###########\r\n");
+		Console.WriteLine("********************************************");
 
-		string pattern = @"[\+\-\*\/]";
-		bool value1IsNotValid = Regex.IsMatch(value1, pattern);
-		bool value2IsNotValid = Regex.IsMatch(value2, pattern);
+		Console.WriteLine("---Digite uma placa Ex: ABC-1234 ---\r\n");
 
-		if (value1IsNotValid || value2IsNotValid)
+		string pattern = @"^[A-Z]{3}-\d{4}$";
+
+		animation();
+
+		string plate = Console.ReadLine();
+
+		bool plateIsValid = Regex.IsMatch(plate, pattern);
+
+		string isValid = String.Empty;
+
+		switch(plateIsValid)
 		{
-			Console.WriteLine("Valores informados não são validos. Por favor tente novamente!");
-			Environment.Exit(0);
+			case true:
+				isValid = "valida";
+				break;
+			case false:	
+				isValid = "invalida";
+			break ;
+
 		}
 
-		double _value1 = Convert.ToDouble(value1);
-		double _value2 = Convert.ToDouble(value2);
+		Console.WriteLine("\r\n********************************************\r\n");
+		Console.WriteLine($"Está placa é {isValid}\r\n");
+		Console.WriteLine("********************************************\r\n");
+	}
 
-		double result = _value1 - _value2;
+	static void date()
+	{
+		Console.WriteLine("########### Exercício Prático 6 - Datas ###########\r\n");
+		Console.WriteLine("********************************************\r\n");
 
-		return result.ToString();
+		DateTime fullDate = DateTime.Now;
+		DateOnly _dateOnly = new DateOnly(fullDate.Year, fullDate.Month, fullDate.Day);
+		
+		string stringFullDate = fullDate.ToString();
+		string stringdateOnly = fullDate.ToString("dd/MM/yyyy", new CultureInfo("pt-BR"));
+		string stringHourOlny = fullDate.ToString("HH:mm:ss", new CultureInfo("pt-BR"));
+		string stringDateMonth = fullDate.ToString("dd/MMMM/yyyy", new CultureInfo("pt-BR"));
+
+		Console.WriteLine($"Formato completo --- {stringFullDate} ---\r\n");
+		Console.WriteLine($"Apenas a data no formato --- {stringdateOnly} ---\r\n");
+		Console.WriteLine($"Apenas a hora no formato de 24 horas --- {stringHourOlny} ---\r\n");
+		Console.WriteLine($"A data com o mês por extenso --- {stringDateMonth} ---\r\n");
+
+		Console.WriteLine("********************************************");
+
+
 	}
 }

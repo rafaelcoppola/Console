@@ -12,3 +12,4 @@ C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\refint\ExerciciosConsole.dll
 C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.pdb
 C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.genruntimeconfig.cache
 C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ref\ExerciciosConsole.dll
+C:\xampp\htdocs\ExerciciosConsole\obj\Debug\net8.0\ExerciciosConsole.sourcelink.json
